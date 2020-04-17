@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Web Moderno</title>
+        <style>
+            #conteudo {
+                padding: 30px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Exercícios HTML</h1>
+        </header>
+        <nav>
+            <a href="Exercicios/teste.html">00 - TESTE</a> |
+            <a href="Exercicios/texto1.html">01 - TEXTO</a> |
+            <a href="Exercicios/lista.html">02 - LISTA</a> |
+            <a href="Exercicios/listaAninhada.html">03 - LISTA ANINHADA</a> |
+            <a href="Exercicios/link.html">04 - LINKS</a> |
+            <a href="Exercicios/tabela.html">05 - TABELAS</a> |
+            <a href="Exercicios/Form/form.html">06 - FORMULÁRIO</a> |
+            <a href="Exercicios/images.html">07 - IMAGENS</a> |
+            <a href="Exercicios/video.html">08 - VÍDEO</a> |
+            <a href="Exercicios/tagsNaoVisuais.html">09 - TAGS NÃO VISUAIS</a> |
+        </nav>
+        <section id="conteudo"></section>
+        <footer>
+            Curso de Web Moderno
+        </footer>
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+                link.onClick = function(e) {
+                    e.preventDefault()
+                    fetch(link.href)
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+        </script>
+    </body>
+</html>
