@@ -1,0 +1,7 @@
+body {
+    background-color: saddlebrown;
+    background-image: url(../imgs/amsterdam.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200vh;
+}
